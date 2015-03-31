@@ -1,0 +1,35 @@
+{
+  "name": "webpackDemo",
+  "version": "1.0.0",
+  "description": "webpack practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rhadow/webpackDemo.git"
+  },
+  "author": "Howard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rhadow/webpackDemo/issues"
+  },
+  "homepage": "https://github.com/Rhadow/webpackDemo",
+  "devDependencies": {
+    "babel-core": "^4.7.16",
+    "babel-loader": "^4.2.0",
+    "css-loader": "^0.9.1",
+    "file-loader": "^0.8.1",
+    "jsx-loader": "^0.12.2",
+    "style-loader": "^0.9.0",
+    "url-loader": "^0.5.5",
+    "webpack": "^1.7.3"
+  },
+  "dependencies": {
+    "react": "^0.13.1",
+    "webpack-dev-server": "^1.8.0"
+  }
+}
