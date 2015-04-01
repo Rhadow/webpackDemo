@@ -5,7 +5,7 @@ var webpack = require('webpack');
 
 
 var config = {
-	entry: ['webpack/hot/dev-server', path.resolve(__dirname, 'app/main.js')],
+	entry: ['webpack-dev-server/client?http://localhost:8080', 'webpack/hot/only-dev-server', path.resolve(__dirname, 'app/main.js')],
 	output: {
 		path: path.resolve(__dirname, 'build'),
 		filename: 'bundle.js'
@@ -13,7 +13,8 @@ var config = {
 	module: {
 		loaders: [{
 			test: /\.js$/,
-			loaders: ['babel']
+			exclude: /node_modules/,
+			loaders: ['react-hot','babel']
 		},{
 			test: /\.css$/,
 			loader: 'style!css'
@@ -21,7 +22,11 @@ var config = {
 			test: /\.(png|jpg)$/,
 			loader: 'url?limit=10000'
 		}]
-	}
-}
+	},
+	plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()
+    ]
+};
 
 module.exports = config;
