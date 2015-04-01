@@ -1,6 +1,7 @@
 var path = require('path');
 var node_modules = path.resolve(__dirname, 'node_modules');
-var pathToReact = path.resolve(node_modules, 'react/dist/react.min.js')
+var pathToReact = path.resolve(node_modules, 'react/dist/react.min.js');
+var webpack = require('webpack');
 
 
 var config = {
@@ -12,20 +13,14 @@ var config = {
 	module: {
 		loaders: [{
 			test: /\.js$/,
-			loader: 'babel'
+			loaders: ['babel']
 		},{
 			test: /\.css$/,
 			loader: 'style!css'
 		},{
 			test: /\.(png|jpg)$/,
-			loader: 'url?1'
-		}],
-		noParse: [pathToReact]
-	},
-	resolve: {
-		alias: {
-			'react': pathToReact
-		}
+			loader: 'url?limit=10000'
+		}]
 	}
 }
 

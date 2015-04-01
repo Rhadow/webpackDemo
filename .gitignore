@@ -1,0 +1,14 @@
+### OSX ###
+.DS_Store
+.idea
+us.stackdump
+
+### Windows ###
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+node_modules/
+/dist
+/src/scripts
+/src/bower_components
