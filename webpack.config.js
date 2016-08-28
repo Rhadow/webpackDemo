@@ -1,7 +1,7 @@
 module.exports = {
     entry: './app/app.js',
     output: {
-        path: './build',
+        path: './dist',
         filename: 'bundle.js'
     },
     module: {
@@ -15,5 +15,9 @@ module.exports = {
                 }
             }
         ]
+    },
+    resolve: {
+        // Default extensions: ["", ".webpack.js", ".web.js", ".js"]
+        extensions: ['', '.js', '.css'],
     }
 };

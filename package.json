@@ -19,7 +19,7 @@
   "devDependencies": {},
   "scripts": {
     "build": "webpack",
-    "prod": "NODE_ENV=production webpack -p"
+    "pbuild": "webpack -p"
   },
   "repository": {
     "type": "git",
