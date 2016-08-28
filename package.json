@@ -7,6 +7,7 @@
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
+    "css-loader": "^0.24.0",
     "eslint": "^3.4.0",
     "eslint-config-airbnb": "^10.0.1",
     "eslint-plugin-import": "^1.14.0",
@@ -14,6 +15,7 @@
     "eslint-plugin-react": "^6.1.2",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
+    "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.0"
   },
@@ -21,7 +23,7 @@
   "scripts": {
     "build": "webpack",
     "pbuild": "webpack -p",
-    "dev": "webpack-dev-server --inline"
+    "dev": "webpack-dev-server --inline --hot"
   },
   "repository": {
     "type": "git",
