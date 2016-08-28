@@ -14,12 +14,14 @@
     "eslint-plugin-react": "^6.1.2",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.0"
   },
   "devDependencies": {},
   "scripts": {
     "build": "webpack",
-    "pbuild": "webpack -p"
+    "pbuild": "webpack -p",
+    "dev": "webpack-dev-server --inline"
   },
   "repository": {
     "type": "git",
