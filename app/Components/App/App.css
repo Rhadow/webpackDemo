@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'orange-juice';
+    src: url('../../assets/orange-juice.ttf') format('truetype');
+}
 .colored {
     color: green;
+    font-family: 'orange-juice'
 }

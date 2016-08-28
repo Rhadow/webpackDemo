@@ -10,20 +10,24 @@
     "css-loader": "^0.24.0",
     "eslint": "^3.4.0",
     "eslint-config-airbnb": "^10.0.1",
+    "eslint-loader": "^1.5.0",
     "eslint-plugin-import": "^1.14.0",
     "eslint-plugin-jsx-a11y": "^2.2.0",
     "eslint-plugin-react": "^6.1.2",
+    "file-loader": "^0.9.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
+    "webpack-dashboard": "^0.1.8",
     "webpack-dev-server": "^1.15.0"
   },
   "devDependencies": {},
   "scripts": {
     "build": "webpack",
     "pbuild": "webpack -p",
-    "dev": "webpack-dev-server --inline --hot"
+    "dev": "webpack-dashboard -- webpack-dev-server --inline --hot"
   },
   "repository": {
     "type": "git",
