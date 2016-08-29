@@ -6,7 +6,7 @@ var DashboardPlugin = require('webpack-dashboard/plugin');
 module.exports = {
     entry: {
         app: './app/app.js',
-        vendor: ['react']
+        vendor: ['react', 'react-dom']
     },
     output: {
         path: './dist',
