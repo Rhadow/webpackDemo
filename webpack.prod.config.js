@@ -62,6 +62,11 @@ module.exports = {
                 warnings: false
             }
         }),
+        new webpack.DefinePlugin({
+            'process.env': JSON.stringify({
+                NODE_ENV: process.env.NODE_ENV
+            })
+        }),
         new ExtractTextPlugin('/css/app.bundle.css'),
         new HtmlWebpackPlugin({
             title: 'Webpack Demo',

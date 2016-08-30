@@ -27,8 +27,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build": "webpack -p --config webpack.prod.config.js",
-    "dev": "webpack-dashboard -- webpack-dev-server --inline --hot"
+    "build": "NODE_ENV=production webpack -p --config webpack.prod.config.js",
+    "dev": "NODE_ENV=development webpack-dashboard -- webpack-dev-server --inline --hot"
   },
   "repository": {
     "type": "git",

@@ -51,7 +51,12 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
-        new DashboardPlugin()
+        new DashboardPlugin(),
+        new webpack.DefinePlugin({
+            'process.env': JSON.stringify({
+                NODE_ENV: process.env.NODE_ENV
+            })
+        })
     ],
     resolve: {
         // Default extensions: ["", ".webpack.js", ".web.js", ".js"]
