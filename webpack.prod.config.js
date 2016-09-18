@@ -1,6 +1,7 @@
 /* eslint-disable */
 var webpack = require('webpack');
-var DashboardPlugin = require('webpack-dashboard/plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 /* eslint-enable */
 
 module.exports = {
@@ -10,7 +11,7 @@ module.exports = {
     },
     output: {
         path: './dist',
-        filename: '[name].js'
+        filename: '/js/[name].js'
     },
     module: {
         preLoaders: [
@@ -32,30 +33,44 @@ module.exports = {
             {
                 test: /\.css$/,
                 exclude: 'node_modules',
-                loaders: ['style', 'css']
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
             },
             {
                 test: /\.(png|jpg|jpeg|gif|svg)$/,
                 exclude: 'node_modules',
                 loader: 'url',
                 query: {
-                    limit: 5000
+                    limit: 5000,
+                    name: '/assets/images/[name].[ext]'
                 }
             },
             {
                 test: /\.(woff|woff2|ttf|eot)(\?v=\d\.\d\.\d)?$/,
                 exclude: 'node_modules',
-                loader: 'file'
+                loader: 'file',
+                query: {
+                    name: '/assets/fonts/[name].[ext]'
+                }
             }
         ]
     },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
-        new DashboardPlugin(),
+        new webpack.optimize.CommonsChunkPlugin('vendor', '/js/vendor.bundle.js'),
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        }),
         new webpack.DefinePlugin({
             'process.env': JSON.stringify({
                 NODE_ENV: process.env.NODE_ENV
             })
+        }),
+        new ExtractTextPlugin('/css/app.bundle.css'),
+        new HtmlWebpackPlugin({
+            title: 'Webpack Demo',
+            template: './index-template.html'
         })
     ],
     resolve: {
