@@ -1,6 +1,5 @@
 /* eslint-disable */
 var webpack = require('webpack');
-var DashboardPlugin = require('webpack-dashboard/plugin');
 /* eslint-enable */
 
 module.exports = {
@@ -10,7 +9,6 @@ module.exports = {
     },
     output: {
         path: './dist',
-        publicPath: '/dist/',
         filename: '[name].js'
     },
     module: {
@@ -51,8 +49,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
-        new DashboardPlugin()
+        new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')
     ],
     resolve: {
         // Default extensions: ["", ".webpack.js", ".web.js", ".js"]
