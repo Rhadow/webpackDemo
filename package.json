@@ -22,13 +22,12 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
-    "webpack-dashboard": "^0.1.8",
     "webpack-dev-server": "^1.15.0"
   },
   "devDependencies": {},
   "scripts": {
     "build": "NODE_ENV=production webpack -p --config webpack.prod.config.js",
-    "dev": "NODE_ENV=development webpack-dashboard -- webpack-dev-server --inline --hot"
+    "dev": "NODE_ENV=development webpack-dev-server --inline --hot"
   },
   "repository": {
     "type": "git",
